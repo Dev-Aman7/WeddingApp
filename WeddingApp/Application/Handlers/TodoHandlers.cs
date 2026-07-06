@@ -53,30 +53,6 @@ public class DeleteTodoCommandHandler : IRequestHandler<DeleteTodoCommand, bool>
     }
 }
 
-public class GetGuestsQueryHandler : IRequestHandler<GetGuestsQuery, List<GuestDto>>
-{
-    private readonly IGuestRepository _guestRepository;
-
-    public GetGuestsQueryHandler(IGuestRepository guestRepository)
-    {
-        _guestRepository = guestRepository;
-    }
-
-    public async Task<List<GuestDto>> Handle(GetGuestsQuery request, CancellationToken ct)
-    {
-        var guests = await _guestRepository.GetAllAsync();
-        return guests.Select(g => new GuestDto
-        {
-            Id = g.Id,
-            Name = g.Name,
-            Email = g.Email,
-            PhoneNumber = g.PhoneNumber,
-            Address = g.Address,
-            IsConfirmed = g.IsConfirmed,
-            CreatedAt = g.CreatedAt
-        }).ToList();
-    }
-}
 
 public class GetTodosQueryHandler : IRequestHandler<GetTodosQuery, List<TodoDto>>
 {

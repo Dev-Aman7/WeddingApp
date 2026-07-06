@@ -136,3 +136,4 @@
 /Users/amankumar/Desktop/Projects/wedding/WeddingApp/bin/Debug/net10.0/MediatR.dll
 /Users/amankumar/Desktop/Projects/wedding/WeddingApp/bin/Debug/net10.0/MediatR.Contracts.dll
 /Users/amankumar/Desktop/Projects/wedding/WeddingApp/bin/Debug/net10.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/amankumar/Desktop/Projects/wedding/WeddingApp/obj/Debug/net10.0/WeddingApp.sourcelink.json
