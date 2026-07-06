@@ -14,7 +14,7 @@ const baseQuery = fetchBaseQuery({
 
 export const api = createApi({
   reducerPath: 'api',
-  tagTypes: ['Guests', 'Todos'],
+  tagTypes: ['Guests', 'Todos', 'Events'],
   baseQuery: baseQuery,
   endpoints: (builder) => ({
     signup: builder.mutation({
@@ -30,6 +30,18 @@ export const api = createApi({
         method: 'POST',
         body: credentials,
       }),
+    }),
+    getEvents: builder.query({
+      query: () => '/event',
+      providesTags: ['Events'],
+    }),
+    createEvent: builder.mutation({
+      query: (eventData) => ({
+        url: '/event/create',
+        method: 'POST',
+        body: eventData,
+      }),
+      invalidatesTags: ['Events'],
     }),
     getGuests: builder.query({
       query: () => '/guests',
@@ -68,6 +80,8 @@ export const api = createApi({
 export const {
   useSignupMutation,
   useLoginMutation,
+  useGetEventsQuery,
+  useCreateEventMutation,
   useGetGuestsQuery,
   useAddGuestMutation,
   useGetTodosQuery,

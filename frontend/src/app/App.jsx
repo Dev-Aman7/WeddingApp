@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import LoginPage from '../features/auth/LoginPage'
 import SignupPage from '../features/auth/SignupPage'
-import DashboardPage from '../pages/DashboardPage'
+import DashboardPage from '../features/dashboard/DashboardPage'
 import { selectToken } from '../features/auth/authSlice'
 import './App.css'
 
