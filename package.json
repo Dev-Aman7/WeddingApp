@@ -1,0 +1,17 @@
+{
+  "name": "wedding-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev:api": "dotnet run --project WeddingApp/WeddingApp.csproj",
+    "dev:frontend": "npm --prefix frontend run dev -- --host 0.0.0.0",
+    "dev": "concurrently --kill-others-on-fail \"npm run dev:api\" \"wait-on tcp:127.0.0.1:5000 && npm run dev:frontend\"",
+    "build:api": "dotnet build WeddingApp/WeddingApp.csproj",
+    "build:frontend": "npm --prefix frontend run build",
+    "build": "npm run build:api && npm run build:frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "wait-on": "^9.0.0"
+  }
+}
